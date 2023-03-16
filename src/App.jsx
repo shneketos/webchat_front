@@ -9,10 +9,13 @@ function App() {
   return (
     <>
       <Header />
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/chat" element={<Chat />} />
-      </Routes>
+      <main>
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/chat" element={<Chat />} />
+        </Routes>
+      </main>
+
       <Footer />
     </>
   );

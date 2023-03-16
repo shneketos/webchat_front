@@ -1,0 +1,143 @@
+.Chat {
+  margin: 0 auto;
+  width: 1000px;
+  height: 700px;
+  color: black;
+  margin-top: 15px;
+  .header {
+    background-color: rgba(233, 177, 177, 0.63);
+    color: black;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .users {
+      color: rgb(0, 0, 0);
+      margin-left: 10px;
+      font-size: 18px;
+    }
+    .room {
+      font-size: 26px;
+      font-weight: 600;
+      color: rgb(0, 0, 0);
+    }
+    button {
+      margin-right: 10px;
+      background: rgb(218, 38, 38);
+      border-radius: 6px;
+      border: none;
+      font-size: 14px;
+      padding: 10px;
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #fcf9f4;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #da6161;
+  }
+  .messages {
+    height: 500px;
+    background-color: rgb(233, 177, 177);
+    overflow-y: auto;
+  }
+  .bottom {
+    display: flex;
+
+    background-color: rgba(233, 177, 177, 0.63);
+    form {
+      display: flex;
+      .text {
+        background-color: inherit;
+        margin-top: 10px;
+        width: 800px;
+        height: 40px;
+        border: none;
+        line-height: 30px;
+        color: black;
+        font-size: 20px;
+        font-weight: 600;
+        &::placeholder {
+          color: black;
+          font-size: 16px;
+          font-weight: 600;
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+      .submit {
+        color: black;
+        font-size: 20px;
+        width: 200px;
+        border: none;
+        background-color: inherit;
+        cursor: pointer;
+      }
+    }
+  }
+}
+@media (max-width: 425px) {
+  .Chat {
+    width: 425px;
+    .header {
+      height: 84px;
+      .users {
+        position: absolute;
+        left: 0px;
+        top: 110px;
+      }
+      .room {
+        position: absolute;
+        left: 11px;
+        top: 50px;
+      }
+      button {
+        position: absolute;
+        left: 270px;
+        top: 96px;
+      }
+    }
+  }
+  .bottom {
+    form {
+      width: 425px;
+    }
+  }
+}
+@media (max-width: 375px) {
+  .Chat {
+    width: 375px;
+    .header {
+      height: 84px;
+      .users {
+        position: absolute;
+        left: 0px;
+        top: 110px;
+      }
+      .room {
+        position: absolute;
+        left: 11px;
+        top: 50px;
+      }
+      button {
+        width: 140px;
+        position: absolute;
+        left: 232px;
+        top: 96px;
+      }
+    }
+  }
+  .bottom {
+    form {
+      width: 375px;
+    }
+  }
+}
