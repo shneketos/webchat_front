@@ -16,7 +16,7 @@ export const Main = () => {
   };
   const onClick = (event) => {
     const isDisabled = Object.values(values).some((v) => !v);
-    console.log(isDisabled);
+
     if (isDisabled) event.preventDefault();
   };
   return (

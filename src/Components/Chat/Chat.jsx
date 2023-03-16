@@ -4,9 +4,7 @@ import io from "socket.io-client";
 import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./Chat.module.scss";
 import { Messages } from "../Messages/Messages";
-const socket = io.connect(
-  "https://webchat-back-git-main-shneketos.vercel.app/"
-);
+const socket = io.connect("https://server-ehr6.onrender.com/");
 export const Chat = () => {
   const navigate = useNavigate();
   const [state, setState] = React.useState([]);
@@ -31,7 +29,6 @@ export const Chat = () => {
     socket.on("room", ({ data: { users } }) => {
       setUsers(users.length);
     });
-    console.log(users);
   }, []);
   const logout = () => {
     socket.emit("leftRoom", { params });
