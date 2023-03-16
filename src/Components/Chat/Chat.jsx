@@ -4,7 +4,7 @@ import io from "socket.io-client";
 import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./Chat.module.scss";
 import { Messages } from "../Messages/Messages";
-const socket = io.connect("http://localhost:5000/");
+const socket = io.connect("https://webchat-back.vercel.app/");
 export const Chat = () => {
   const navigate = useNavigate();
   const [state, setState] = React.useState([]);
