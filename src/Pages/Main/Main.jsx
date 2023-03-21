@@ -11,6 +11,7 @@ export const Main = () => {
   const { NAME, ROOM } = FIELDS;
 
   const [values, setValues] = React.useState({ [NAME]: "", [ROOM]: "" });
+
   const handleChange = ({ target: { value, name } }) => {
     setValues({ ...values, [name]: value });
   };

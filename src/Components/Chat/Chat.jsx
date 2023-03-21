@@ -1,17 +1,19 @@
 import React from "react";
+
 import { useEffect } from "react";
 import io from "socket.io-client";
 import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./Chat.module.scss";
 import { Messages } from "../Messages/Messages";
 const socket = io.connect("https://server-ehr6.onrender.com/");
+
 export const Chat = () => {
   const navigate = useNavigate();
   const [state, setState] = React.useState([]);
   const { search } = useLocation();
   const [params, setParams] = React.useState({ room: "", user: "" });
   const [message, setMessage] = React.useState("");
-  const [users, setUsers] = React.useState(0);
+  const [users, setUsers] = React.useState();
   useEffect(() => {
     const searchParams = Object.fromEntries(new URLSearchParams(search));
     setParams(searchParams);
@@ -30,6 +32,7 @@ export const Chat = () => {
       setUsers(users.length);
     });
   }, []);
+
   const logout = () => {
     socket.emit("leftRoom", { params });
     navigate("/");
@@ -47,6 +50,7 @@ export const Chat = () => {
 
     setMessage("");
   };
+
   return (
     <section className={styles.Chat}>
       <header className={styles.header}>
@@ -70,12 +74,7 @@ export const Chat = () => {
             onChange={handleChange}
             required
           />
-          <input
-            className={styles.submit}
-            type="submit"
-            onSubmit={handleSubmit}
-            value="Отправить"
-          />
+          <input className={styles.submit} type="submit" value="Отправить" />
         </form>
       </div>
     </section>
