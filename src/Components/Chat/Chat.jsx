@@ -5,7 +5,7 @@ import io from "socket.io-client";
 import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./Chat.module.scss";
 import { Messages } from "../Messages/Messages";
-const socket = io.connect("https://server-ehr6.onrender.com/");
+const socket = io.connect("https://server-ohjq.onrender.com");
 
 export const Chat = () => {
   const navigate = useNavigate();
